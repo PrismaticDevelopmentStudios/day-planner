@@ -30,6 +30,9 @@ let originalHour = hour;
 if (hour > 12) {
     hour = hour - 12;
 }
+if (minutes < 10) {
+    minutes = '0' + minutes;
+}
 let time = hour + ':' + minutes;
 currentDay.text(`It's now ` + time + ' on ' + date);
 // END Current Date & Time END
