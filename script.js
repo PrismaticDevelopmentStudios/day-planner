@@ -22,55 +22,91 @@ const fiveTd = $('#fiveTd');
 // const saveBtn = $('.icon');
 
 // Current Date & Time
-const date = moment().format('MMMM DD, YY');
-const d = new Date();
-let minutes = d.getMinutes();
-let hour = d.getHours();
-let originalHour = hour;
+//Date
+let date = moment().format('MMMM DD, YYYY');
+//Time
+let hour = moment().get('hour');
+console.log(hour);
 if (hour > 12) {
     hour = hour - 12;
 }
-if (minutes < 10) {
-    minutes = '0' + minutes;
+let minute = moment().get('minute');
+if (minute < 10) {
+    minute = '0' + minute
 }
-let time = hour + ':' + minutes;
-currentDay.text(`It's now ` + time + ' on ' + date);
-// END Current Date & Time END
+let time = hour + ':' + minute;
+currentDay.text(`It's ` + time + ' on ' + date);
+setInterval(function() {
+    //Date
+    date = moment().format('MMMM DD, YYYY');
+    //Time
+    currentDay.text(`It's ` + time + ' on ' + date);
+    hour = moment().get('hour');
+    // Sets Present Class
+    if (hour === 9) {
+        nine.addClass('present').removeClass('future past');
+    }
+    if (hour === 10) {
+        nine.addClass('present').removeClass('future past');
+    }
+    if (hour === 11) {
+        nine.addClass('present').removeClass('future past');
+    }
+    if (hour === 12) {
+        nine.addClass('present').removeClass('future past');
+    }
+    if (hour === 13) {
+        nine.addClass('present').removeClass('future past');
+    }
+    if (hour === 14) {
+        nine.addClass('present').removeClass('future past');
+    }
+    if (hour === 15) {
+        three.addClass('present').removeClass('future past');
+    }
+    if (hour === 16) {
+        nine.addClass('present').removeClass('future past');
+    }
+    if (hour === 17) {
+        nine.addClass('present').removeClass('future past');
+    }
+    // Sets past class
+    if (9 < hour) {
+        nine.addClass('past').removeClass('future present');
+    }
+    if (10 < hour) {
+        ten.addClass('past').removeClass('future present');
+    }
+    if (11 < hour) {
+        eleven.addClass('past').removeClass('future present');
+    }
+    if (12 < hour) {
+        twelve.addClass('past').removeClass('future present');
+    }
+    if (13 < hour) {
+        one.addClass('past').removeClass('future present');
+    }
+    if (14 < hour) {
+        two.addClass('past').removeClass('future present');
+    }
+    if (15 < hour) {
+        three.addClass('past').removeClass('future present');
+    }
+    if (16 < hour) {
+        four.addClass('past').removeClass('future present');
+    }
+    if (17 < hour) {
+        five.addClass('past').removeClass('future present');
+    }
 
-
-// Changes Class of Present
-if (nine === parseInt(nineTd.text())) {
-    nine.addClass('present');
-}
-if (ten === parseInt(tenTd.text())) {
-    ten.addClass('present');
-}
-if (eleven === parseInt(elevenTd.text())) {
-    eleven.addClass('present');
-}
-if (twelve === parseInt(twelveTd.text())) {
-    twelve.addClass('present');
-}
-if (one === parseInt(oneTd.text())) {
-    one.addClass('present');
-}
-if (two === parseInt(twoTd.text())) {
-    two.addClass('present');
-}
-if (three === parseInt(threeTd.text())) {
-    three.addClass('present');
-}
-if (hour === parseInt(fourTd.text())) {
-    four.addClass('present');
-}
-if (hour === parseInt(fiveTd.text())) {
-    five.addClass('present');
-}
-
-if (17 > Math.floor(originalHour) < 9) {
-    console.log('future ' + originalHour);
-}
-
-if (17 > Math.floor(originalHour) > 9) {
-    console.log('past ' + Math.floor(originalHour));
-}
+    // Sets time to 12 hour time
+    if (hour > 12) {
+        hour = hour - 12;
+    }
+    // Gets Minutes
+    minute = moment().get('minute');
+    if (minute < 10) {
+        minute = '0' + minute
+    }
+    time = hour + ':' + minute;
+}, 1);
