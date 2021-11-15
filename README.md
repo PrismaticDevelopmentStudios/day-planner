@@ -13,9 +13,10 @@ A day planner front end application that uses JavaScript and saves data using us
 <a href="https://www.linkedin.com/in/matthewbrignola/">LinkedIn</a> <br>
 <a href="https://github.com/PrismaticDevelopmentStudios">GitHub</a> <br>
 ## Technologies
-HTML
-CSS
-JavaScript
+HTML<br>
+CSS<br>
+JavaScript<br>
+jQuery<br>
 ## Instructions
  
 
