@@ -97,6 +97,10 @@ td textarea {
     padding: 2%;
 }
 
+th {
+    text-align: center;
+}
+
 #credit {
     text-align: right;
 }
