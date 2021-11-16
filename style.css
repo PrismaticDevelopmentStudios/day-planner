@@ -103,3 +103,16 @@ td textarea {
     padding: 2%;
     cursor: pointer;
 }
+
+#elevenTd,
+#tenTd,
+#nineTd,
+#twelveTd,
+#oneTd,
+#twoTd,
+#threeTd,
+#fourTd,
+#fiveTd {
+    vertical-align: middle;
+    text-align: center;
+}
