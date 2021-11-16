@@ -10,8 +10,8 @@ textarea {
     resize: none;
     color: #000000;
     border-left: 1px solid black;
-    padding: 10px;
-    height: 25vh;
+    border-right: 1px solid black;
+    height: 10em;
     width: 75vw;
 }
 
