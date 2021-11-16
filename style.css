@@ -82,6 +82,10 @@ th {
     background-color: #06aed5;
 }
 
+tr {
+    border: 1px solid black;
+}
+
 td,
 th {
     vertical-align: top;

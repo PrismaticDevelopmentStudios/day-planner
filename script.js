@@ -26,7 +26,6 @@ const fiveTd = $('#fiveTd');
 let date = moment().format('MMMM DD, YYYY');
 //Time
 let hour = moment().get('hour');
-console.log(hour);
 if (hour > 12) {
     hour = hour - 12;
 }
@@ -43,34 +42,8 @@ setInterval(function() {
     currentDay.text(`It's ` + time + ' on ' + date);
     hour = moment().get('hour');
     // Sets Present Class
-    if (hour === 9) {
-        nine.addClass('present').removeClass('future past');
-    }
-    if (hour === 10) {
-        nine.addClass('present').removeClass('future past');
-    }
-    if (hour === 11) {
-        nine.addClass('present').removeClass('future past');
-    }
-    if (hour === 12) {
-        nine.addClass('present').removeClass('future past');
-    }
-    if (hour === 13) {
-        nine.addClass('present').removeClass('future past');
-    }
-    if (hour === 14) {
-        nine.addClass('present').removeClass('future past');
-    }
-    if (hour === 15) {
-        three.addClass('present').removeClass('future past');
-    }
-    if (hour === 16) {
-        nine.addClass('present').removeClass('future past');
-    }
-    if (hour === 17) {
-        nine.addClass('present').removeClass('future past');
-    }
-    // Sets past class
+
+    // Sets Past Class
     if (9 < hour) {
         nine.addClass('past').removeClass('future present');
     }
@@ -97,6 +70,61 @@ setInterval(function() {
     }
     if (17 < hour) {
         five.addClass('past').removeClass('future present');
+    } // Sets Future Class
+    if (9 > hour) {
+        five.addClass('future').removeClass('past present');
+    }
+    if (10 > hour) {
+        nine.addClass('future').removeClass('past present');
+    }
+    if (11 > hour) {
+        ten.addClass('future').removeClass('past present');
+    }
+    if (12 > hour) {
+        eleven.addClass('future').removeClass('past present');
+    }
+    if (13 > hour) {
+        one.addClass('future').removeClass('past present');
+    }
+    if (14 > hour) {
+        two.addClass('future').removeClass('past present');
+    }
+    if (15 > hour) {
+        three.addClass('future').removeClass('past present');
+    }
+    if (16 > hour) {
+        four.addClass('future').removeClass('past present');
+    }
+    if (17 > hour) {
+        five.addClass('future').removeClass('past present');
+    }
+    // Sets Present Class
+    if (hour === 9) {
+        five.addClass('present').removeClass('past future');
+    }
+    if (hour === 10) {
+        nine.addClass('present').removeClass('past future');
+    }
+    if (hour === 11) {
+        ten.addClass('present').removeClass('past future');
+    }
+    if (hour === 12) {
+        eleven.addClass('present').removeClass('past future');
+    }
+    if (hour === 13) {
+        one.addClass('present').removeClass('past future');
+    }
+    if (hour === 14) {
+        two.addClass('present').removeClass('past future');
+    }
+    if (hour === 15) {
+        three.addClass('present').removeClass('past future');
+    }
+    if (hour === 16) {
+        four.addClass('present').removeClass('past future');
+    }
+    if (hour === 17) {
+        five.addClass('present').removeClass('past future');
     }
 
     // Sets time to 12 hour time
