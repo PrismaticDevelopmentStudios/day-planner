@@ -1,24 +1,6 @@
 // DOM Elms
 const container = $('.container');
 const currentDay = $('#currentDay');
-const nine = $('#nine');
-const nineTd = $('#nineTd');
-const ten = $('#ten');
-const tenTd = $('#tenTd');
-const eleven = $('#eleven');
-const elevenTd = $('#elevenTd');
-const twelve = $('#twelve');
-const twelveTd = $('#twelveTd');
-const one = $('#one');
-const oneTd = $('#oneTd');
-const two = $('#two');
-const twoTd = $('#twoTd');
-const three = $('#three');
-const threeTd = $('#threeTd');
-const four = $('#four');
-const fourTd = $('#fourTd');
-const five = $('#five');
-const fiveTd = $('#fiveTd');
 // const saveBtn = $('.icon');
 
 // Current Date & Time
@@ -52,15 +34,20 @@ setInterval(function() {
             $(this).addClass('future').removeClass('past present');
         }
     });
-
     // Sets time to 12 hour time
+    let HOUR = hour;
     if (hour > 12) {
         hour = hour - 12;
+    }
+    if (HOUR >= 12) {
+        time = hour + ':' + minute + ' pm';
+    } else if (HOUR <= 12) {
+        time = hour + ':' + minute + ' am';
     }
     // Gets Minutes
     minute = moment().get('minute');
     if (minute < 10) {
         minute = '0' + minute
     }
-    time = hour + ':' + minute;
+
 }, 1000);
