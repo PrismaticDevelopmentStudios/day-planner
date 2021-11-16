@@ -43,7 +43,6 @@ setInterval(function() {
     hour = moment().get('hour');
     // Sets Present Class
     $('.time-row').each(function() {
-        console.log($(this), hour);
         let row = parseInt($(this).attr('id'));
         if (hour === row) {
             $(this).addClass('present').removeClass('past future');
