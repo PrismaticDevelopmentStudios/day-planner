@@ -51,3 +51,19 @@ setInterval(function() {
     }
 
 }, 1000);
+
+$('.btn').click(function() {
+    localStorage.setItem($(this).parent('.time-row').attr('id'), $(this).siblings('.fullWidth').children().val());
+});
+
+$(document).ready(function() {
+    $('#9').children('.fullWidth').children('.event').text(localStorage.getItem('9'));
+    $('#10').children('.fullWidth').children('.event').text(localStorage.getItem('10'));
+    $('#11').children('.fullWidth').children('.event').text(localStorage.getItem('11'));
+    $('#12').children('.fullWidth').children('.event').text(localStorage.getItem('12'));
+    $('#13').children('.fullWidth').children('.event').text(localStorage.getItem('13'));
+    $('#14').children('.fullWidth').children('.event').text(localStorage.getItem('14'));
+    $('#15').children('.fullWidth').children('.event').text(localStorage.getItem('15'));
+    $('#16').children('.fullWidth').children('.event').text(localStorage.getItem('16'));
+    $('#17').children('.fullWidth').children('.event').text(localStorage.getItem('17'));
+});
