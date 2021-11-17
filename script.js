@@ -57,7 +57,10 @@ $('.btn').click(function() {
 });
 
 $(document).ready(function() {
-    $('.time-row').each(function(i, value) {
+    for (let i = 9; i < 18; i++) {
         $(`#${i}`).children('.fullWidth').children('.event').text(localStorage.getItem(i));
-    });
+        console.log(`#${i}`);
+
+    }
+    $('.time-row')
 });
