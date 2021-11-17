@@ -60,5 +60,4 @@ $(document).ready(function() {
     for (let i = 9; i < 18; i++) {
         $(`#${i}`).children('.fullWidth').children('.event').text(localStorage.getItem(i));
     }
-    $('.time-row')
 });
